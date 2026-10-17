@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentación de Pólizas — Unidad Educativa Nueva Barcelona</title>
+<style>
+:root{
+  --ink:#1a2332; --muted:#66707f; --line:#e3e7ee; --bg:#f6f8fa; --card:#ffffff;
+  --accent:#1f5fa8; --accent-soft:#e8f0f9; --bar:#2f6db3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.5;padding:24px 16px 64px}
+.wrap{max-width:1040px;margin:0 auto}
+header.top{border-bottom:3px solid var(--accent);padding-bottom:16px;margin-bottom:8px}
+header.top h1{font-size:26px;font-weight:600}
+header.top p{color:var(--muted);font-size:14px;margin-top:4px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:2px 10px;font-size:12px;font-weight:600;margin:6px 6px 0 0}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.tab{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:7px 16px;font-size:14px;cursor:pointer;transition:all .15s}
+.tab:hover{color:var(--ink);border-color:#c3ccd8}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sec{display:none}
+.sec.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.note{font-size:14px;color:var(--muted);margin:6px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:14px 0}
+.card h3{font-size:16px;font-weight:600;margin-bottom:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0}
+th,td{padding:8px 12px;border-bottom:1px solid var(--line);text-align:left;font-variant-numeric:tabular-nums}
+thead th{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.03em;border-bottom:2px solid var(--line);background:#fafbfc}
+td.num,th.num{text-align:right}
+tr.tot td{font-weight:700;border-top:2px solid var(--line);background:#fafbfc}
+tr.tot2 td{font-weight:700}
+.pill{border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:8px;padding:6px 14px;font-size:13px;cursor:pointer}
+.pill.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.bar-row{display:flex;align-items:center;gap:10px;margin:8px 0;cursor:pointer;border-radius:8px;padding:4px}
+.bar-row:hover{background:#f0f4f9}
+.bar-lab{width:150px;font-size:13px;color:var(--muted);flex:none}
+.bar-track{flex:1;height:22px;background:#eef1f5;border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;transition:width .3s ease}
+.bar-row.on .bar-track{outline:2px solid var(--ink)}
+.bar-val{width:90px;text-align:right;font-size:13px;font-weight:600;flex:none}
+.big{font-size:36px;font-weight:700;line-height:1.15;font-variant-numeric:tabular-nums}
+.muted{color:var(--muted);font-size:13px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kpi{background:var(--accent-soft);border-radius:12px;padding:16px}
+.kpi .muted{margin-bottom:4px}
+ul{margin:8px 0 8px 20px;font-size:14px}
+li{margin:5px 0}
+footer{margin-top:32px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+@media(max-width:680px){.grid2{grid-template-columns:1fr}.bar-lab{width:110px}}
+@media print{.tabs,.seg{display:none}.sec{display:block!important}.bar-row{cursor:default}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Presentación de pólizas — Unidad Educativa Nueva Barcelona</h1>
+  <p>Seguros Caracas, C.A. (RIF J-00038923-3) · Asesor: José Fernando Camino Rosales (cód. 11237) · 47 titulares + grupo familiar · Moneda USD · Cotizaciones emitidas en octubre 2026</p>
+  <span class="badge">Salud colectivo</span><span class="badge">Responsabilidad patronal</span><span class="badge">Responsabilidad empresarial LOPCYMAT</span>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab on" data-s="resumen">Comparativa general</button>
+  <button class="tab" data-s="p1">Salud para ti · año póliza</button>
+  <button class="tab" data-s="p2">Salud por enfermedad</button>
+  <button class="tab" data-s="p3">Salud colectivo plus</button>
+  <button class="tab" data-s="p4">Salud a tu alcance</button>
+  <button class="tab" data-s="p5">Responsabilidad empresarial</button>
+  <button class="tab" data-s="p6">Responsabilidad patronal</button>
+</nav>
+
+<section class="sec on" id="s-resumen">
+  <p class="note">Cotizaciones N° 211865 y 211864 (salud) y N° 13076714 / 13076708 (responsabilidad) · Validez hasta el 21-oct-2026 (para ti, enfermedad y plus) y hasta el 28-oct-2026 (a tu alcance, empresarial y patronal) · Se exige afiliación del 100% del universo asegurable.</p>
+  <div class="card">
+    <h3>Costo anual estimado del programa de salud (47 titulares)</h3>
+    <div class="seg">
+      <button class="pill on" data-pg="parati">Para ti</button>
+      <button class="pill" data-pg="enf">Por enfermedad</button>
+      <button class="pill" data-pg="plus">Plus</button>
+    </div>
+    <div class="seg" id="ampSeg">
+      <button class="pill on" data-amp="sin">Sin atención primaria</button>
+      <button class="pill" data-amp="con">Con atención primaria</button>
+    </div>
+    <div class="seg">
+      <button class="pill on" data-sv="con">Con servicios extra</button>
+      <button class="pill" data-sv="sin">Sin servicios extra</button>
+    </div>
+    <div id="chart"></div>
+    <p class="muted">Haz clic en una barra para seleccionar la opción y calcular el paquete completo.</p>
+  </div>
+  <div class="grid2">
+    <div class="card kpi">
+      <div class="muted">Paquete anual seleccionado (salud + responsabilidad)</div>
+      <div class="big" id="pkgTotal">—</div>
+      <div id="pkgBreak" class="muted" style="margin-top:10px"></div>
+    </div>
+    <div class="card">
+      <h3>Pólizas de responsabilidad (anual, incluye IGTF 3%)</h3>
+      <table>
+        <tbody>
+          <tr><td>Responsabilidad patronal (cot. 13076708)</td><td class="num" style="font-weight:600">$1.916,45</td></tr>
+          <tr><td>Responsabilidad empresarial LOPCYMAT (cot. 13076714)</td><td class="num" style="font-weight:600">$180,33</td></tr>
+          <tr class="tot"><td>Subtotal responsabilidad</td><td class="num">$2.096,78</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Límites patronales: $50.700 por trabajador / $300.000 catastrófico. Límites empresariales: $28.800 por trabajador / $144.000 catastrófico.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="s-p1">
+  <p class="note">Cotización 211865 · Salud colectivo para ti, cobertura por asegurado año póliza · Restitución automática anual · Sin plazos de espera (cubre congénitas y preexistencias) · 70% fuera de la red para ti · Maternidad hasta 50 años · Reembolsos: 30 días · Cartas aval: solicitud con 7 días hábiles, respuesta en 3.</p>
+  <div class="seg">
+    <button class="pill on" data-t1="sin">Sin atención médica primaria</button>
+    <button class="pill" data-t1="con">Con atención médica primaria</button>
+  </div>
+  <div id="t1"></div>
+</section>
+
+<section class="sec" id="s-p2">
+  <p class="note">Cotización 211865 · Suma asegurada y deducible aplicados por enfermedad o accidente y por año póliza · Deducible $50 por evento en Venezuela · 70% de indemnización fuera de red.</p>
+  <div class="seg">
+    <button class="pill on" data-t2="sin">Sin atención médica primaria</button>
+    <button class="pill" data-t2="con">Con atención médica primaria</button>
+  </div>
+  <div id="t2"></div>
+</section>
+
+<section class="sec" id="s-p3">
+  <p class="note">Cotización 211864 · Salud colectivo plus · Deducible $0 en Venezuela · Reembolsos: 60 días · Cartas de garantía en 5 días hábiles · Maternidad hasta 50 años (100% usual y razonable).</p>
+  <table>
+    <thead><tr><th>Cobertura</th><th class="num">Op. 1</th><th class="num">Op. 2</th><th class="num">Op. 3</th><th class="num">Op. 4</th><th class="num">Op. 5</th></tr></thead>
+    <tbody>
+      <tr><td>Salud básica</td><td class="num">$10.000</td><td class="num">$20.000</td><td class="num">$30.000</td><td class="num">$50.000</td><td class="num">$10.000</td></tr>
+      <tr><td>Medicamentos ambulatorios</td><td class="num">$3.000</td><td class="num">$6.000</td><td class="num">$8.000</td><td class="num">$15.000</td><td class="num">$3.000</td></tr>
+      <tr><td>Atención médica primaria</td><td class="num">$2.000</td><td class="num">$2.000</td><td class="num">$2.000</td><td class="num">$2.500</td><td class="num">$2.000</td></tr>
+      <tr><td>Deducible en Venezuela</td><td class="num">$0</td><td class="num">$0</td><td class="num">$0</td><td class="num">$0</td><td class="num">$50</td></tr>
+      <tr><td>Maternidad (deducible $0)</td><td class="num">$3.000</td><td class="num">$4.000</td><td class="num">$5.000</td><td class="num">$5.000</td><td class="num">$3.000</td></tr>
+      <tr><td>COVID-19 (deducible $0 / $50)</td><td class="num">$10.000</td><td class="num">$20.000</td><td class="num">$25.000</td><td class="num">$25.000</td><td class="num">$10.000</td></tr>
+      <tr><td>Urgent care</td><td class="num">No incluido</td><td class="num">No incluido</td><td class="num">No incluido</td><td class="num">No incluido</td><td class="num">Incluido</td></tr>
+      <tr><td>Gastos de entierro</td><td class="num">$1.000</td><td class="num">$1.000</td><td class="num">$1.000</td><td class="num">$1.000</td><td class="num">$1.000</td></tr>
+      <tr class="tot"><td>Total sin servicios extra (47)</td><td class="num">$74.422</td><td class="num">$84.407</td><td class="num">$88.806</td><td class="num">$98.640</td><td class="num">$63.337</td></tr>
+      <tr class="tot2"><td>Total con servicios extra</td><td class="num">$78.417</td><td class="num">$88.402</td><td class="num">$92.801</td><td class="num">$102.635</td><td class="num">$67.332</td></tr>
+    </tbody>
+  </table>
+  <p class="note">La opción 5 combina cobertura básica de $10.000 con deducible de $50 e incluye urgent care; es la más económica del programa.</p>
+</section>
+
+<section class="sec" id="s-p4">
+  <p class="note">Emitida el 13-oct-2026 · Validez hasta el 28-oct-2026 · Plan único · Red a tu alcance (70% fuera de red) · Sin maternidad · Sin reembolsos · Emergencias gestionadas por videoconsulta en la app o central telefónica.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Coberturas contratadas</h3>
+      <table>
+        <tbody>
+          <tr><td>Salud año póliza</td><td class="num">$7.000</td></tr>
+          <tr><td>Deducible de salud</td><td class="num">$50</td></tr>
+          <tr><td>Atención primaria (telemedicina)</td><td class="num">$500</td></tr>
+          <tr><td>Medicamentos vía telemedicina</td><td class="num">$400</td></tr>
+          <tr><td>COVID-19 (deducible $50)</td><td class="num">$7.000</td></tr>
+          <tr><td>In situ plus / urgent care</td><td class="num">Incluido</td></tr>
+          <tr><td>Gastos de entierro</td><td class="num">$1.000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Prima anual por grupo de edad (45 asegurados)</h3>
+      <table>
+        <thead><tr><th>Edades</th><th class="num">Asegurados</th><th class="num">Unitaria</th><th class="num">Total</th></tr></thead>
+        <tbody>
+          <tr><td>0 a 39 años</td><td class="num">9</td><td class="num">$280</td><td class="num">$2.520</td></tr>
+          <tr><td>40 a 50 años</td><td class="num">12</td><td class="num">$387</td><td class="num">$4.644</td></tr>
+          <tr><td>51 a 70 años</td><td class="num">24</td><td class="num">$674</td><td class="num">$16.176</td></tr>
+          <tr class="tot"><td>Total</td><td class="num">45</td><td class="num">—</td><td class="num">$23.340</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Frecuencias de pago: anual $23.340 · semestral $11.670 · cuatrimestral $7.780 · trimestral $5.835 · mensual $1.945</p>
+    </div>
+  </div>
+  <p class="note">Es la alternativa más económica del portafolio, con prima mensual disponible; cubre a 45 de los 47 titulares según la nómina cotizada.</p>
+</section>
+
+<section class="sec" id="s-p5">
+  <p class="note">Cotización 13076714 · Responsabilidad empresarial LOPCYMAT · Ampara prestaciones del artículo 130 por accidentes laborales o enfermedades ocupacionales · Vigencia 12 meses · 47 trabajadores · Nómina anual declarada $169.200.</p>
+  <table>
+    <thead><tr><th>Cobertura</th><th class="num">Suma asegurada</th><th class="num">Prima USD</th></tr></thead>
+    <tbody>
+      <tr><td>Básica LOPCYMAT art. 130</td><td class="num">Según ley</td><td class="num">$63,58</td></tr>
+      <tr><td>Responsabilidad del empleador por negligencia</td><td class="num">$10.000</td><td class="num">$38,34</td></tr>
+      <tr><td>Asistencia legal y defensa penal</td><td class="num">$10.000</td><td class="num">$19,17</td></tr>
+      <tr><td>Gastos médico-quirúrgicos, hospitalarios y farmacéuticos</td><td class="num">$5.000</td><td class="num">$53,99</td></tr>
+      <tr class="tot"><td>Subtotal coberturas opcionales</td><td class="num">—</td><td class="num">$111,50</td></tr>
+      <tr class="tot2"><td>Total prima provisional</td><td class="num">—</td><td class="num">$175,08</td></tr>
+      <tr><td>IGTF (3%)</td><td class="num">—</td><td class="num">$5,25</td></tr>
+      <tr class="tot"><td>Total a pagar</td><td class="num">—</td><td class="num">$180,33</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2">
+    <div class="card kpi"><div class="muted">Límite por trabajador (año póliza)</div><div class="big" style="font-size:30px">$28.800</div></div>
+    <div class="card kpi"><div class="muted">Límite catastrófico (2 o más trabajadores)</div><div class="big" style="font-size:30px">$144.000</div></div>
+  </div>
+</section>
+
+<section class="sec" id="s-p6">
+  <p class="note">Cotización 13076708 · Responsabilidad patronal · Prestaciones dinerarias por accidentes laborales y enfermedades ocupacionales · Vigencia 12 meses · 47 trabajadores · Nómina anual $169.200.</p>
+  <ul>
+    <li><b>Muerte:</b> 3 años de salario (máx. 50 salarios mínimos)</li>
+    <li><b>Gran discapacidad:</b> 3 años de salario (máx. 50 SM)</li>
+    <li><b>Discapacidad absoluta y permanente:</b> 2 años de salario (máx. 50 SM)</li>
+    <li><b>Discapacidad temporal:</b> salario hasta 1 año, prorrogable a 2</li>
+    <li><b>Discapacidad parcial permanente:</b> hasta 1 año (máx. 30 SM)</li>
+    <li><b>Gastos de entierro:</b> hasta 15 SM</li>
+  </ul>
+  <table>
+    <thead><tr><th>Cobertura</th><th class="num">Suma asegurada</th><th class="num">Prima USD</th></tr></thead>
+    <tbody>
+      <tr><td>Cobertura básica patronal</td><td class="num">Según baremo</td><td class="num">$373,50</td></tr>
+      <tr><td>Gastos de asistencia médica, quirúrgica y farmacéutica</td><td class="num">$5.000</td><td class="num">$442,90</td></tr>
+      <tr><td>Hernias de tejidos blandos</td><td class="num">$5.000</td><td class="num">$188,86</td></tr>
+      <tr><td>Hernias discales</td><td class="num">$9.000</td><td class="num">$132,89</td></tr>
+      <tr><td>Atención médica in situ</td><td class="num">Asistencia</td><td class="num">$423,00</td></tr>
+      <tr><td>Entrega de medicamentos (enfermedades agudas)</td><td class="num">Asistencia</td><td class="num">$235,00</td></tr>
+      <tr><td>Exceso asistencia médica, quirúrgica y farmacéutica</td><td class="num">$10.000</td><td class="num">$44,64</td></tr>
+      <tr><td>Exceso de gastos por rehabilitación</td><td class="num">$10.000</td><td class="num">$19,84</td></tr>
+      <tr class="tot"><td>Subtotal coberturas opcionales</td><td class="num">—</td><td class="num">$1.487,13</td></tr>
+      <tr class="tot2"><td>Total prima provisional</td><td class="num">—</td><td class="num">$1.860,63</td></tr>
+      <tr><td>IGTF (3%)</td><td class="num">—</td><td class="num">$55,82</td></tr>
+      <tr class="tot"><td>Total a pagar</td><td class="num">—</td><td class="num">$1.916,45</td></tr>
+    </tbody>
+  </table>
+  <div class="grid2">
+    <div class="card kpi"><div class="muted">Límite por trabajador (año póliza)</div><div class="big" style="font-size:30px">$50.700</div></div>
+    <div class="card kpi"><div class="muted">Límite catastrófico (2 o más trabajadores)</div><div class="big" style="font-size:30px">$300.000</div></div>
+  </div>
+</section>
+
+<footer>
+  Documento informativo elaborado a partir de las cotizaciones de Seguros Caracas, C.A. para Unidad Educativa Nueva Barcelona (RIF J-303486509). Montos en USD. Validez de cotizaciones: 15 días continuos desde su emisión. Este material no sustituye las condiciones generales y particulares de las pólizas.
+</footer>
+</div>
+
+<script>
+(function(){
+var $=function(s){return document.querySelector(s)},$$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var fmt=function(n){return '$'+n.toLocaleString('es-VE',{maximumFractionDigits:2})};
+var T1={
+ sin:{rows:[['Salud básica para ti',['$10.000','$20.000','$30.000','$50.000']],['Medicamentos ambulatorios',['$3.000','$6.000','$9.000','$15.000']],['Atención médica primaria',['$0','$0','$0','$0']],['Deducible en Venezuela',['$50','$50','$50','$50']],['Maternidad (deducible $0)',['$3.000','$4.000','$5.000','$5.000']],['COVID-19 (deducible $50)',['$10.000','$20.000','$25.000','$25.000']],['Servicios extra (odont./oft./derm./psic.)',['Disponible','Disponible','Disponible','Disponible']],['In situ plus / urgent care',['Incluido','Incluido','Incluido','Incluido']],['Gastos de entierro',['$1.000','$1.000','$1.000','$1.000']]],
+  sinServ:['$35.333','$40.697','$43.217','$48.153'],conServ:['$39.328','$44.692','$47.212','$52.148']},
+ con:{rows:[['Salud básica para ti',['$10.000','$20.000','$30.000','$50.000']],['Medicamentos ambulatorios',['$3.000','$6.000','$9.000','$15.000']],['Atención médica primaria',['$2.000','$2.000','$2.000','$2.500']],['Deducible en Venezuela',['$50','$50','$50','$50']],['Maternidad (deducible $0)',['$3.000','$4.000','$5.000','$5.000']],['COVID-19 (deducible $50)',['$10.000','$20.000','$25.000','$25.000']],['Servicios extra (odont./oft./derm./psic.)',['Disponible','Disponible','Disponible','Disponible']],['In situ plus / urgent care',['Incluido','Incluido','Incluido','Incluido']],['Gastos de entierro',['$1.000','$1.000','$1.000','$1.000']]],
+  sinServ:['$42.009','$47.368','$49.889','$55.358'],conServ:['$46.004','$51.363','$53.884','$58.353']}};
+var T2={
+ sin:{rows:[['Cobertura básica por enfermedad',['$10.000','$20.000','$30.000','$50.000']],['Medicamentos ambulatorios',['$3.000','$6.000','$9.000','$15.000']],['Maternidad (deducible $0)',['$3.000','$4.000','$5.000','$5.000']],['COVID-19 (deducible $50)',['$10.000','$20.000','$25.000','$25.000']],['Gastos de entierro',['$1.000','$1.000','$1.000','$1.000']],['Urgent care / in situ plus',['Incluido','Incluido','Incluido','Incluido']]],
+  sinServ:['$40.347','$46.462','$49.412','$55.074'],conServ:['$44.342','$50.457','$53.407','$59.069']},
+ con:{rows:[['Cobertura básica por enfermedad',['$10.000','$20.000','$30.000','$50.000']],['Límite atención médica primaria',['$2.000','$2.000','$2.000','$2.500']],['Medicamentos ambulatorios',['$3.000','$6.000','$9.000','$15.000']],['Maternidad (deducible $0)',['$3.000','$4.000','$5.000','$5.000']]],
+  sinServ:['$47.019','$53.170','$56.084','$62.279'],conServ:['$51.014','$57.165','$60.079','$66.274']}};
+function renderT(el,obj,extra){
+ var h='<table><thead><tr><th>Cobertura</th><th class="num">Op. 1</th><th class="num">Op. 2</th><th class="num">Op. 3</th><th class="num">Op. 4</th></tr></thead><tbody>';
+ obj.rows.forEach(function(r){h+='<tr><td>'+r[0]+'</td>'+r[1].map(function(c){return '<td class="num">'+c+'</td>'}).join('')+'</tr>'});
+ h+='<tr class="tot"><td>Total sin servicios extra (47)</td>'+obj.sinServ.map(function(c){return '<td class="num">'+c+'</td>'}).join('')+'</tr>';
+ h+='<tr class="tot2"><td>Total con servicios extra</td>'+obj.conServ.map(function(c){return '<td class="num">'+c+'</td>'}).join('')+'</tr></tbody></table>';
+ if(extra)h+='<p class="note">La prima odonto/oftalmo/derma/psico es de $85 por asegurado en todas las opciones. Las primas varían por rango de edad (aprox. de $289 a $2.854 según modalidad, edad y opción).</p>';
+ el.innerHTML=h;
+}
+renderT($('#t1'),T1.sin,true);renderT($('#t2'),T2.sin,false);
+$$('#s-p1 [data-t1]').forEach(function(b){b.onclick=function(){$$('#s-p1 [data-t1]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');renderT($('#t1'),T1[b.dataset.t1],true)}});
+$$('#s-p2 [data-t2]').forEach(function(b){b.onclick=function(){$$('#s-p2 [data-t2]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');renderT($('#t2'),T2[b.dataset.t2],false)}});
+var DATA={
+ parati:{amp:true,labels:['Op. 1 · $10.000','Op. 2 · $20.000','Op. 3 · $30.000','Op. 4 · $50.000'],
+  sin:{sin:[35333,40697,43217,48153],con:[39328,44692,47212,52148]},con:{sin:[42009,47368,49889,55358],con:[46004,51363,53884,58353]}},
+ enf:{amp:true,labels:['Op. 1 · $10.000','Op. 2 · $20.000','Op. 3 · $30.000','Op. 4 · $50.000'],
+  sin:{sin:[40347,46462,49412,55074],con:[44342,50457,53407,59069]},con:{sin:[47019,53170,56084,62279],con:[51014,57165,60079,66274]}},
+ plus:{amp:false,labels:['Op. 1 · $10.000','Op. 2 · $20.000','Op. 3 · $30.000','Op. 4 · $50.000','Op. 5 · $10.000 + urgent'],
+  con:{sin:[74422,84407,88806,98640,63337],con:[78417,88402,92801,102635,67332]}}};
+var st={pg:'parati',amp:'sin',sv:'con',sel:0};
+var OP=[[47,111,176,1],[47,111,176,.8],[47,111,176,.65],[47,111,176,.5],[47,111,176,.38]];
+function chart(){
+ var d=DATA[st.pg],set=d[st.amp]?d[st.amp][st.sv]:d.con[st.sv];
+ if(st.sel>=set.length)st.sel=0;
+ var mx=Math.max.apply(null,set),h='';
+ set.forEach(function(v,i){
+  var c=OP[i];
+  h+='<div class="bar-row'+(i===st.sel?' on':'')+'" data-i="'+i+'"><div class="bar-lab">'+d.labels[i]+'</div><div class="bar-track"><div class="bar-fill" style="width:'+(v/mx*100).toFixed(1)+'%;background:rgba('+c[0]+','+c[1]+','+c[2]+','+c[3]+')"></div></div><div class="bar-val">'+fmt(v)+'</div></div>'});
+ $('#chart').innerHTML=h;
+ $$('#chart .bar-row').forEach(function(r){r.onclick=function(){st.sel=+r.dataset.i;chart();pkg()}});
+ var am=$('#ampSeg');
+ if(!d.amp){st.amp='con';am.style.opacity='0.4';am.style.pointerEvents='none'}else{am.style.opacity='1';am.style.pointerEvents='auto'}
+ pkg();
+}
+function pkg(){
+ var d=DATA[st.pg],set=d[st.amp]?d[st.amp][st.sv]:d.con[st.sv],v=set[st.sel],t=v+2096.78;
+ $('#pkgTotal').textContent=fmt(t);
+ $('#pkgBreak').innerHTML='Salud ('+d.labels[st.sel]+'): '+fmt(v)+'<br>Patronal: $1.916,45 · Empresarial LOPCYMAT: $180,33<br>Prima mensual aproximada del paquete: '+fmt(t/12);
+}
+$$('#s-resumen [data-pg]').forEach(function(b){b.onclick=function(){$$('#s-resumen [data-pg]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');st.pg=b.dataset.pg;chart()}});
+$$('#ampSeg [data-amp]').forEach(function(b){b.onclick=function(){$$('#ampSeg [data-amp]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');st.amp=b.dataset.amp;chart()}});
+$$('#s-resumen [data-sv]').forEach(function(b){b.onclick=function(){$$('#s-resumen [data-sv]').forEach(function(x){x.classList.remove('on')});b.classList.add('on');st.sv=b.dataset.sv;chart()}});
+$$('#tabs .tab').forEach(function(b){b.onclick=function(){$$('#tabs .tab').forEach(function(x){x.classList.remove('on')});$$('.sec').forEach(function(x){x.classList.remove('on')});b.classList.add('on');$('#s-'+b.dataset.s).classList.add('on');window.scrollTo({top:0,behavior:'smooth'})}});
+chart();
+})();
+</script>
+</body>
+</html>
